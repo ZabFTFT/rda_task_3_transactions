@@ -8,7 +8,7 @@ SET @OrderID = LAST_INSERT_ID();
 -- Start the transaction 
 START TRANSACTION; 
 INSERT INTO OrderItems(OrderID, ProductID, Count) VALUES (@OrderID, 1, 1);
-UPDATE Products SET WarehouseAmount = WarehouseAmount - 1 WHERE Products.ID = 1;
+UPDATE Products SET WarehouseAmount = WarehouseAmount - 1 WHERE ID = 1;
 -- And some data should be created inside the transaction 
 
 COMMIT; 
